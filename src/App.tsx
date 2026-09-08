@@ -1,22 +1,15 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Integrations from './components/Integrations'
-import HowItWorks from './components/HowItWorks'
-import Faq from './components/Faq'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Integrations />
-      <Faq />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   )
 }
 
