@@ -1,12 +1,13 @@
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Navbar />
-      <div className="pt-24 text-center">
-        <h1 className="text-4xl font-bold">Hero section coming next</h1>
-      </div>
+      <Hero />
+      <Features />
     </div>
   )
 }
