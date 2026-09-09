@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Sparkles, Mail, Lock, User, Phone, ArrowRight } from 'lucide-react'
-import { div } from 'motion/react-m'
 
 const API_URL = 'https://atlas-assistant-kq2s.onrender.com'
 
