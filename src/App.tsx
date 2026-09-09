@@ -3,6 +3,8 @@ import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import OAuthSuccess from './pages/OAuthSuccess'
+import AddPhone from './pages/AddPhone'
+import Dashboard from './pages/DashboardPage'
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/oauth-success" element={<OAuthSuccess />} />
+      <Route path="/add-phone" element={<AddPhone />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   )
 }
