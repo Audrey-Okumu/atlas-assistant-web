@@ -68,29 +68,29 @@ function Dashboard() {
 
   return (
     <DashboardLayout>
-      <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Dashboard</h1>
 
-      <div className="bg-emerald-500/10 border border-emerald-500/20   rounded-xl p-6 mb-10 flex items-center justify-between">
-          <div>
-            <h2 className="font-semibold text-white mb-1">Prefer WhatsApp?</h2>
-            <p className="text-slate-400 text-sm">
-              Message Atlas Assistant directly from WhatsApp, anytime.
-            </p>
-          </div>
-          <a
-            href="https://wa.me/14155238886?text=join%20beyond-compound"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-5 py-3 rounded-lg font-medium transition whitespace-nowrap"
-          >
-            Chat on WhatsApp
-          </a>
+      <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-5 sm:p-6 mb-8 sm:mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 className="font-semibold text-white mb-1">Prefer WhatsApp?</h2>
+          <p className="text-slate-400 text-sm">
+            Message Atlas Assistant directly from WhatsApp, anytime.
+          </p>
         </div>
+        <a
+          href="https://wa.me/14155238886?text=join%20beyond-compound"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-5 py-3 rounded-lg font-medium transition whitespace-nowrap w-full md:w-auto"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-10">
-        <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+      <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
+        <div className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6">
           <div className="flex items-center gap-2 mb-4">
-            <Mail className="w-5 h-5 text-indigo-400" />
+            <Mail className="w-5 h-5 text-indigo-400 shrink-0" />
             <h2 className="font-semibold">Recent Emails</h2>
           </div>
           {loadingData ? (
@@ -99,7 +99,7 @@ function Dashboard() {
             <p className="text-slate-500 text-sm">No recent emails found.</p>
           ) : (
             <ul className="space-y-2">
-              {emails.map((subject, i) => (
+              {emails.slice(0, 5).map((subject, i) => (
                 <li key={i} className="text-sm text-slate-300 truncate">
                   {subject}
                 </li>
@@ -108,9 +108,9 @@ function Dashboard() {
           )}
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+        <div className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6">
           <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-5 h-5 text-indigo-400" />
+            <Calendar className="w-5 h-5 text-indigo-400 shrink-0" />
             <h2 className="font-semibold">Upcoming Events</h2>
           </div>
           {loadingData ? (
@@ -120,7 +120,7 @@ function Dashboard() {
           ) : (
             <ul className="space-y-2">
               {events.map((event, i) => (
-                <li key={i} className="text-sm text-slate-300">
+                <li key={i} className="text-sm text-slate-300 break-words">
                   {event}
                 </li>
               ))}
@@ -129,10 +129,10 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+      <div className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6">
         <h2 className="font-semibold mb-4">Ask Atlas Assistant</h2>
 
-        <form onSubmit={handleAsk} className="flex gap-2 mb-4">
+        <form onSubmit={handleAsk} className="flex flex-col sm:flex-row gap-2 mb-4">
           <input
             type="text"
             value={question}
@@ -143,14 +143,14 @@ function Dashboard() {
           <button
             type="submit"
             disabled={asking}
-            className="bg-indigo-500 hover:bg-indigo-400 disabled:opacity-50 text-white px-5 rounded-lg transition"
+            className="bg-indigo-500 hover:bg-indigo-400 disabled:opacity-50 text-white px-5 py-3 rounded-lg transition flex items-center justify-center"
           >
             {asking ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
           </button>
         </form>
 
         {answer && (
-          <div className="bg-slate-900 border border-white/10 rounded-lg p-4 text-slate-300 text-sm leading-relaxed">
+          <div className="bg-slate-900 border border-white/10 rounded-lg p-4 text-slate-300 text-sm leading-relaxed break-words">
             {answer}
           </div>
         )}
