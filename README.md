@@ -2,7 +2,7 @@
 
 The web dashboard for [Atlas Assistant](https://github.com/Audrey-Okumu/atlas-assistant), an AI-powered WhatsApp assistant for Gmail and Google Calendar. This is where a new user signs up, connects their Google account, links their WhatsApp number, and can preview the assistant's answers before ever opening WhatsApp.
 
-**Live site:** _add your Vercel URL here once deployed_
+**Live site:** `https://atlas-assistant-89xw9ur3p-akelloaudrey3-2606s-projects.vercel.app/`
 **Backend API:** `https://atlas-assistant-kq2s.onrender.com`
 
 ---
